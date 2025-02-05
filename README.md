@@ -63,4 +63,4 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE.md) f
 This project uses [`ua-parser-js`](https://github.com/faisalman/ua-parser-js) to analyze User-Agent strings.
 
 ### `ua-parser-js` License
-`ua-parser-js` is an open-source JavaScript library developed by [Faisal Salman](https://github.com/faisalman) and is licensed under the [MIT License](https://github.com/faisalman/ua-parser-js/blob/master/LICENSE.md).
+`ua-parser-js` is an open-source JavaScript library developed by [Faisal Salman](https://github.com/faisalman) and is licensed under the [AGPL-3.0 License](https://github.com/faisalman/ua-parser-js/blob/master/LICENSE.md).
