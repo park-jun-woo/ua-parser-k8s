@@ -1,0 +1,44 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ include "redis.fullname" . }}
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: redis-uaparser
+  template:
+    metadata:
+      labels:
+        app: redis-uaparser
+    spec:
+      containers:
+        - name: redis
+          image: redis:alpine
+          command:
+            - "redis-server"
+            - "--save" 
+            - "''"
+            - "--appendonly"
+            - "no"
+            - "--requirepass"
+            - "{{ .Values.redis.password }}"
+          ports:
+            - containerPort: 6379
+          resources:
+            limits:
+              cpu: {{ .Values.redis.resources.limits.cpu }}
+              memory: {{ .Values.redis.resources.limits.memory }}
+            requests:
+              cpu: {{ .Values.redis.resources.requests.cpu }}
+              memory: {{ .Values.redis.resources.requests.memory }}
+          livenessProbe:
+            tcpSocket:
+              port: 6379
+            initialDelaySeconds: 5
+            periodSeconds: 10
+          readinessProbe:
+            tcpSocket:
+              port: 6379
+            initialDelaySeconds: 3
+            periodSeconds: 5

@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ include "uaparser.config" . }}
+data:
+  REDISHOST: {{ include "redis.fullname" . }}
+  REDISPORT: "{{ .Values.redis.service.port }}"
+  REDISPASSWORD: "{{ .Values.redis.password }}"

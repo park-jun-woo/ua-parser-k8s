@@ -1,0 +1,8 @@
+####################################################
+# UA-PARSER-K8S Service Helm Chart Successfully Installed!
+#
+# To uninstall the chart:
+#   helm uninstall {{ .Release.Name }}
+#
+# Happy coding! 🚀
+####################################################

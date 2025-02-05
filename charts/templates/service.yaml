@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ include "uaparser.fullname" . }}
+spec:
+  ports:
+    - port: {{ .Values.uaparser.service.port }}
+      targetPort: 80
+  selector:
+    app: uaparser
+  type: {{ .Values.uaparser.service.type }}

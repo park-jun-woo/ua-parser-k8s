@@ -1,0 +1,33 @@
+# ua-parser-k8s 서비스 설정
+uaparser:
+  replicaCount: 1
+  image:
+    repository: ghcr.io/park-jun-woo/ua-parser-k8s
+    tag: latest
+    pullPolicy: IfNotPresent
+  service:
+    type: ClusterIP
+    port: 80
+  resources:
+    limits:
+      cpu: "500m"
+      memory: "500Mi"
+    requests:
+      cpu: "100m"
+      memory: "100Mi"
+
+# redis-uaparser 설정
+redis:
+  enabled: true
+  service:
+    port: 6379
+  resources:
+    limits:
+      cpu: "500m"
+      memory: "500Mi"
+    requests:
+      cpu: "100m"
+      memory: "100Mi"
+  persistence:
+    enabled: false
+  password: ""

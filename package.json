@@ -1,0 +1,26 @@
+{
+  "name": "ua-parser-k8s",
+  "version": "1.0.0",
+  "description": "ua-parser-k8s is a lightweight, Kubernetes-native microservice that provides User-Agent parsing as an API. It utilizes the popular ua-parser-js library to analyze User-Agent strings and extract device, browser, and OS information efficiently.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/park-jun-woo/ua-parser-k8s.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/park-jun-woo/ua-parser-k8s/issues"
+  },
+  "homepage": "https://github.com/park-jun-woo/ua-parser-k8s#readme",
+  "dependencies": {
+    "fastify": "^5.2.1",
+    "ioredis": "^5.4.2",
+    "ua-parser-js": "^2.0.0"
+  }
+}

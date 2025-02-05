@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ include "uaparser.fullname" . }}
+spec:
+  replicas: {{ .Values.uaparser.replicaCount }}
+  selector:
+    matchLabels:
+      app: uaparser
+  template:
+    metadata:
+      labels:
+        app: uaparser
+    spec:
+      containers:
+        - name: uaparser
+          image: "{{ .Values.uaparser.image.repository }}:{{ .Values.uaparser.image.tag }}"
+          imagePullPolicy: {{ .Values.uaparser.image.pullPolicy }}
+          ports:
+            - containerPort: 80
+          envFrom:
+            - configMapRef:
+                name: {{ include "uaparser.config" . }}
+          resources:
+            limits:
+              cpu: {{ .Values.uaparser.resources.limits.cpu }}
+              memory: {{ .Values.uaparser.resources.limits.memory }}
+            requests:
+              cpu: {{ .Values.uaparser.resources.requests.cpu }}
+              memory: {{ .Values.uaparser.resources.requests.memory }}
