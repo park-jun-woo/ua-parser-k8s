@@ -57,7 +57,7 @@ Content-Type: application/json
 ```
 
 ## License
-This project is licensed under the MIT License - see the [LICENSE](LICENSE.md) file for details.
+This project is licensed under the AGPL-3.0 license - see the [LICENSE](LICENSE) file for details.
 
 ## Dependencies
 This project uses [`ua-parser-js`](https://github.com/faisalman/ua-parser-js) to analyze User-Agent strings.
